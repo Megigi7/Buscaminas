@@ -250,21 +250,15 @@ class Buscaminas:
         records_text = "\n".join([f"{i+1}. {t//60:02}:{t%60:02}" for i, t in enumerate(self.records[dificultad][:5])])  # Mostrar solo los 5 mejores
         self.record_puntos.config(text=records_text)
 
-    # Método para cambiar la dificultad del juego
+    # Método para cambiar la dificultad del juego   
     def cambiar_dificultad(self):
         dificultad = self.dificultad_selector.get()
         if dificultad == "Principiante":
-            self.filas = 9
-            self.columnas = 9
-            self.minas = 10
+            self.filas = 9; self.columnas = 9; self.minas = 10
         elif dificultad == "Intermedio":
-            self.filas = 16
-            self.columnas = 16
-            self.minas = 40
+            self.filas = 16; self.columnas = 16; self.minas = 40
         elif dificultad == "Experto":
-            self.filas = 16
-            self.columnas = 30
-            self.minas = 99
+            self.filas = 16; self.columnas = 30; self.minas = 99
 
         self.iniciar_juego()
         self.actualizar_records()
